@@ -1,16 +1,24 @@
-﻿using System;
+﻿using Raylib_cs;
 
-namespace rikOpdracht
+namespace HelloWorld
 {
-    class Program
+    static class Program
     {
-        static void sayHello()
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
-        }
-        static void Main(string[] args)
-        {
-            sayHello();
+            Raylib.InitWindow(800, 480, "Hello World");
+
+            while (!Raylib.WindowShouldClose())
+            {
+                Raylib.BeginDrawing();
+                Raylib.ClearBackground(Color.WHITE);
+
+                Raylib.DrawText("Hello, world!", 12, 12, 20, Color.BLACK);
+
+                Raylib.EndDrawing();
+            }
+
+            Raylib.CloseWindow();
         }
     }
 }
